@@ -29,7 +29,7 @@ function MobileNavbar() {
 
   const { user } = useUser();
 
-  console.log("User:", user);
+  // console.log("User:", user);
 
   return (
     <div className="flex md:hidden items-center space-x-2">
