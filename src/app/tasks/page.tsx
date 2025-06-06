@@ -1,5 +1,5 @@
 const TasksPage = async () => {
-  const response = await fetch("http://localhost:3000/api/tasks", {
+  const response = await fetch("/api/tasks", {
     cache: "no-store",
   });
 

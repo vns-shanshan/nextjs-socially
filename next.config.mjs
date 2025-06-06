@@ -6,10 +6,7 @@ const nextConfig = {
         // your project has type errors.
         // !! WARN !!
         ignoreBuildErrors: true,
-    },
-    experimental: {
-        appDir: true,
-    },
+    }
 };
 
 export default nextConfig;
