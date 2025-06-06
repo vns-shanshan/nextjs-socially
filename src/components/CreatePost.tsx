@@ -5,9 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { ImageIcon, Loader2Icon, SendIcon } from "lucide-react";
+import { ImageIcon, ImageUp, Loader2Icon, SendIcon } from "lucide-react";
 import { createPost } from "@/actions/post.action";
 import toast from "react-hot-toast";
+import ImageUpload from "@/components/ImageUpload";
+import { url } from "inspector";
 
 const CreatePost = () => {
   const { user } = useUser();
@@ -56,7 +58,18 @@ const CreatePost = () => {
             />
           </div>
 
-          {/* TODO: Handle image upload */}
+          {(showImageUpload || imageUrl) && (
+            <div className="border rounded-lg p-4">
+              <ImageUpload
+                endpoint="postImage"
+                value={imageUrl}
+                onChange={(url) => {
+                  setImageUrl(url);
+                  if (!url) setShowImageUpload(false);
+                }}
+              />
+            </div>
+          )}
 
           <div className="flex items-center justify-between border-t pt-4">
             <div className="flex space-x-2">
